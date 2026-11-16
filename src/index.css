@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --bd-black: #000000;
+    --bd-midnight: #0B0D10;
+    --bd-graphite: #191919;
+    --bd-chrome: #808080;
+    --bd-silver: #C0C0C0;
+    --bd-soft-silver: #E5E5E5;
+    --bd-white: #FFFFFF;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #ffffff;
+  color: #111111;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.hero-3d {
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(255,255,255,0.04);
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/aistudio/image_4cbf8bac.png');
+  background-repeat: no-repeat;
+  background-position: 64% 38%;
+  background-size: 38% auto;
+  opacity: 0.06;
+  filter: grayscale(1) contrast(1.1) brightness(1.35) blur(0.2px);
+  mix-blend-mode: screen;
+  transform: scale(1.02);
+  animation: heroLogoFloat 16s ease-in-out infinite alternate;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 38rem;
+  height: 38rem;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  top: -8rem;
+  right: -8rem;
+  background: rgba(192, 192, 192, 0.45);
+}
+
+.hero-glow-two {
+  bottom: -12rem;
+  left: -8rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-title {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 10px 25px rgba(0,0,0,0.45), 0 24px 60px rgba(0,0,0,0.6);
+}
+
+.hero-cta {
+  position: relative;
+  border-radius: 0.25rem;
+  box-shadow: 0 18px 28px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.2);
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 36px rgba(0,0,0,0.26), inset 0 1px 0 rgba(255,255,255,0.24);
+}
+
+.hero-cta-primary {
+  box-shadow: 0 18px 30px rgba(255,255,255,0.14), 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.hero-cta-secondary {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 24px rgba(0,0,0,0.2);
+}
+
+.navbar-search-control {
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.navbar-search-control:focus-within {
+  border-color: #808080;
+  box-shadow: 0 0 0 2px #808080;
+}
+
+input.navbar-search-input:focus-visible {
+  outline: none;
+}
+
+@keyframes heroLogoFloat {
+  0% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(8px, -5px, 0);
+  }
+}
+
+p {
+  line-height: 1.65;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bd-silver);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
