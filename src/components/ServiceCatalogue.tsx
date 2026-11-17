@@ -75,6 +75,7 @@ export const ServiceCatalogue: React.FC<ServiceCatalogueProps> = ({
         <div className="mb-8 flex items-center gap-2 overflow-x-auto border-b border-[#E5DFD9] pb-4 scrollbar-none">
           <button
             onClick={() => setActiveCategoryTab('all')}
+              aria-pressed={activeCategoryTab === 'all'}
               className={`shrink-0 rounded-lg px-4 py-2.5 text-xs font-semibold whitespace-nowrap transition-colors ${
               activeCategoryTab === 'all'
                 ? 'bg-[#111111] text-white'
@@ -87,6 +88,7 @@ export const ServiceCatalogue: React.FC<ServiceCatalogueProps> = ({
             <button
               key={cat.id}
               onClick={() => setActiveCategoryTab(cat.id)}
+              aria-pressed={activeCategoryTab === cat.id}
               className={`flex shrink-0 items-center gap-2 rounded-lg px-3.5 py-2.5 text-xs font-medium whitespace-nowrap transition-colors ${
                 activeCategoryTab === cat.id
                 ? 'bg-[#111111] text-white font-semibold'

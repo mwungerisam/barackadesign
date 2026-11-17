@@ -1,6 +1,7 @@
 import React from 'react';
 import { APPROVED_SERVICES } from '../data/servicesData';
 import { MapPin, Phone, MessageSquare, ArrowUp } from 'lucide-react';
+import { scrollToTop } from '../utils/scroll';
 
 interface FooterProps {
   onNavClick: (tab: string) => void;
@@ -8,10 +9,6 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavClick, onOpenQuote }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="bg-[#000000] text-white border-t border-[#191919] pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 text-left">
@@ -21,19 +18,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onOpenQuote }) => {
           
           {/* Col 1: Brand & Location (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#191919] border border-[#808080]/30 flex items-center justify-center">
-                <img 
-                  src="/assets/aistudio/image_4cbf8bac.png" 
-                  alt="BARACK DESIGN Logo" 
-                  className="w-full h-full object-cover rounded-full"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <span className="font-heading font-extrabold text-lg text-white tracking-wider">
-                BARACK DESIGN
-              </span>
-            </div>
+            <button type="button" onClick={() => onNavClick('home')} aria-label="BARACK DESIGN home" className="brand-logo-frame brand-logo-frame-footer focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C0C0C0]">
+              <img
+                src="/BARACK%20DESIGN%20LOGO.svg"
+                alt="BARACK DESIGN official logo"
+                className="brand-logo-artwork"
+              />
+            </button>
 
             <p className="text-xs text-[#808080] max-w-sm leading-relaxed">
               Printing, branded products, packaging, event materials, and graphic design in Kigali, Rwanda.

@@ -62,15 +62,15 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ category
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/70 p-3 sm:p-6" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
-      <section ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="product-detail-title" className="my-5 grid w-full max-w-3xl overflow-hidden border border-[#D0D0D0] bg-white text-[#111111] sm:grid-cols-2">
-        <div className="relative min-h-56 bg-[#F2F2F2] sm:min-h-full">
+      <section ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="product-detail-title" className="my-auto grid max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl grid-rows-[minmax(9rem,28vh)_minmax(0,1fr)] overflow-hidden border border-[#D0D0D0] bg-white text-[#111111] sm:max-h-[calc(100dvh-3rem)] sm:grid-rows-1 sm:grid-cols-2">
+        <div className="relative min-h-0 bg-[#F2F2F2] sm:min-h-full">
           <img src={category.image} alt="" onError={(event) => { event.currentTarget.style.display = 'none'; }} className="absolute inset-0 h-full w-full object-cover" />
           <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/75 via-black/25 to-transparent px-3 pb-3 pt-8">
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-white">{category.imageLabel}</span>
             <span className="shrink-0 border border-white/40 bg-black/35 px-2 py-1 text-[9px] font-medium uppercase tracking-wide text-white">Reference image</span>
           </span>
         </div>
-        <div className="p-5 sm:p-7">
+        <div className="min-h-0 overflow-y-auto overscroll-contain p-4 sm:p-7">
           <div className="flex items-start justify-between gap-4">
             <p className="text-xs text-[#666666]">{category.title}</p>
             <button type="button" data-dialog-initial-focus onClick={onClose} aria-label="Close product details" className="-mr-2 -mt-2 p-2 text-[#555555] hover:bg-[#F2F2F2]"><X className="h-5 w-5" /></button>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X, ChevronDown, FileText, Search, ArrowRight } from 'lucide-react';
 import { APPROVED_SERVICES } from '../data/servicesData';
+import { scrollToTop } from '../utils/scroll';
 
 interface NavbarProps {
   activeTab: string;
@@ -79,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setActiveTab(tab);
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTop();
   };
 
   const handleCategoryClick = (catId: string) => {
@@ -99,24 +100,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Zone 1: Brand Wordmark & Logo */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="flex shrink-0 items-center gap-3 rounded-lg p-1 text-left focus:outline-none focus:ring-1 focus:ring-[#C0C0C0] group max-[360px]:gap-2"
+            aria-label="BARACK DESIGN home"
+            className="group flex shrink-0 items-center rounded-lg p-1 text-left focus:outline-none focus:ring-1 focus:ring-[#C0C0C0]"
           >
-              <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden transition-opacity group-hover:opacity-80 max-[360px]:h-8 max-[360px]:w-8">
-              <img 
-                src="/assets/aistudio/image_4cbf8bac.png" 
-                alt="BARACK DESIGN Logo" 
-                className="w-full h-full object-contain"
-                referrerPolicy="no-referrer"
+            <span className="brand-logo-frame brand-logo-frame-header">
+              <img
+                src="/BARACK%20DESIGN%20LOGO.svg"
+                alt="BARACK DESIGN official logo"
+                className="brand-logo-artwork"
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="whitespace-nowrap font-heading text-lg font-extrabold tracking-wider text-white transition-colors group-hover:text-[#C0C0C0] max-[360px]:text-sm">
-                BARACK DESIGN
-              </span>
-              <span className="-mt-0.5 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.25em] text-[#808080] max-[360px]:hidden">
-                KIGALI · RWANDA
-              </span>
-            </div>
+            </span>
           </button>
 
           <form
@@ -161,7 +154,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
             >
               <button
-                onClick={() => handleNavClick('services')}
+                onClick={() => {
+                  setActiveTab('services');
+                  setServicesDropdownOpen(true);
+                }}
                 aria-expanded={servicesDropdownOpen}
                 aria-controls={servicesDropdownOpen ? 'services-dropdown' : undefined}
                 className={`flex items-center gap-1.5 hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
@@ -174,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {/* Mega Dropdown */}
               {servicesDropdownOpen && (
-                <div id="services-dropdown" className="absolute top-full left-1/2 -translate-x-1/2 w-[min(720px,calc(100vw-2rem))] bg-[#0B0D10] border border-[#191919] rounded-xl shadow-2xl p-6 grid grid-cols-2 gap-3 mt-1 backdrop-blur-xl z-50">
+                <div id="services-dropdown" className="absolute top-full left-1/2 -translate-x-1/2 w-[min(720px,calc(100vw-2rem))] max-h-[calc(100dvh-6rem)] overflow-y-auto overscroll-contain bg-[#0B0D10] border border-[#191919] rounded-xl shadow-2xl p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 backdrop-blur-xl z-50">
                   <div className="col-span-2 pb-2 mb-1 border-b border-[#191919] flex items-center justify-between">
                     <span className="text-xs font-semibold text-[#808080] uppercase tracking-wider">Browse services</span>
                     <button 

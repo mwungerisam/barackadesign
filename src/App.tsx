@@ -17,6 +17,7 @@ import { QuotationModal } from './components/QuotationModal';
 import { FAQSection } from './components/FAQSection';
 import { FeaturedProducts } from './components/FeaturedProducts';
 import { CookieBanner } from './components/CookieBanner';
+import { getScrollBehavior, scrollToSection, scrollToTop } from './utils/scroll';
 
 const NAV_TABS = ['home', 'services', 'creative-studio', 'portfolio', 'about', 'contact'] as const;
 const getTabFromLocation = () => {
@@ -74,12 +75,12 @@ export default function App() {
     setQuoteCatId(undefined);
     setActiveTab('services');
     updateLocationForTab('services');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTop();
   };
 
   const handleExploreServices = () => {
     setActiveTab('home');
-    window.setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 0);
+    window.setTimeout(() => scrollToSection(document.getElementById('services')), 0);
   };
 
   const handleNavigation = (tab: string) => {
@@ -87,7 +88,7 @@ export default function App() {
     updateLocationForTab(tab);
     setQuoteCatId(undefined);
     if (tab === 'home') setServiceSearch('');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: getScrollBehavior() });
   };
 
   return (
