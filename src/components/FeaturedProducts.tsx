@@ -26,7 +26,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ onOpenQuote 
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#666666]">Popular requests</p>
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#666666]">Featured products</p>
           <h2 id="featured-heading" className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Start with a product.</h2>
         </div>
         <p className="max-w-md text-sm leading-6 text-[#666666]">Options and prices are confirmed after we review your brief.</p>

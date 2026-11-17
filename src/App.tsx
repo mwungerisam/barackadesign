@@ -93,6 +93,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#111111] flex flex-col font-sans selection:bg-[#C0C0C0] selection:text-[#000000]">
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       {/* Top Bar Navigation */}
       <Navbar
         activeTab={activeTab}
@@ -105,7 +106,7 @@ export default function App() {
       />
 
       {/* Main Content View Switcher */}
-      <main className="flex-1 bg-white">
+      <main id="main-content" tabIndex={-1} className="flex-1 bg-white focus:outline-none">
         {activeTab === 'home' && (
           <>
             <Hero

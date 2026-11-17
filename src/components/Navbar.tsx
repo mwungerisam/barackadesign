@@ -136,6 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <nav className="hidden lg:flex items-center gap-4 2xl:gap-6 text-sm font-medium text-[#E5E5E5]">
             <button
               onClick={() => handleNavClick('home')}
+              aria-current={activeTab === 'home' ? 'page' : undefined}
               className={`hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
                 activeTab === 'home' ? 'text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C0C0C0]' : 'text-[#808080]'
               }`}
@@ -160,6 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }}
                 aria-expanded={servicesDropdownOpen}
                 aria-controls={servicesDropdownOpen ? 'services-dropdown' : undefined}
+                aria-current={activeTab === 'services' ? 'page' : undefined}
                 className={`flex items-center gap-1.5 hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
                   activeTab === 'services' ? 'text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C0C0C0]' : 'text-[#808080]'
                 }`}
@@ -205,6 +207,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('creative-studio')}
+              aria-current={activeTab === 'creative-studio' ? 'page' : undefined}
               className={`hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
                 activeTab === 'creative-studio' ? 'text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C0C0C0]' : 'text-[#808080]'
               }`}
@@ -214,6 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('portfolio')}
+              aria-current={activeTab === 'portfolio' ? 'page' : undefined}
               className={`hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
                 activeTab === 'portfolio' ? 'text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C0C0C0]' : 'text-[#808080]'
               }`}
@@ -223,6 +227,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('about')}
+              aria-current={activeTab === 'about' ? 'page' : undefined}
               className={`hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
                 activeTab === 'about' ? 'text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C0C0C0]' : 'text-[#808080]'
               }`}
@@ -232,6 +237,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('contact')}
+              aria-current={activeTab === 'contact' ? 'page' : undefined}
               className={`hover:text-white transition-colors relative py-2 whitespace-nowrap shrink-0 ${
                 activeTab === 'contact' ? 'text-white font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C0C0C0]' : 'text-[#808080]'
               }`}

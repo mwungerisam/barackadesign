@@ -93,9 +93,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onOpenQuote }) => {
             </ul>
           </div>
 
-          {/* Col 4: Approved Divisions F-J (3 cols) */}
+          {/* Col 4: Remaining approved services (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="text-xs font-bold text-white uppercase tracking-wider">Design & services</div>
+            <div className="text-xs font-bold text-white uppercase tracking-wider">Design & production</div>
             <ul className="space-y-2 text-xs text-[#808080]">
               {APPROVED_SERVICES.slice(5).map(cat => (
                 <li key={cat.id}>
