@@ -8,14 +8,14 @@ const CATEGORY_IMAGES = {
   'printing-paper': printProductionImage,
   'corporate-branding': brandIdentityImage,
   'logo-branding': 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80',
-  'promotional-products': 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=1200&q=80',
+  'promotional-products': 'https://raw.githubusercontent.com/mwungerisam/barackadesign/292efd7ef7c0c58579c4b7c97debffeaa095ee08/src/assets/images/mugs_ceramic_matte_1793362635861.jpg',
   'apparel-textile': apparelImage,
   'large-format': largeFormatImage,
   'stickers-packaging': packagingImage,
   'graphic-design': 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80',
   'event-branding': 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
   'photo-decorative': 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1200&q=80',
-  'document-finishing': 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80'
+  'document-finishing': 'https://raw.githubusercontent.com/mwungerisam/barackadesign/292efd7ef7c0c58579c4b7c97debffeaa095ee08/src/assets/images/case_architectural_monograph_1793361991774.jpg'
 } as const;
 
 export interface ServiceSubitem {
@@ -34,12 +34,13 @@ export interface ServiceCategory {
   subtitle: string;
   description: string;
   image: string;
+  imageLabel: string;
   subitems: ServiceSubitem[];
 }
 
 export const APPROVED_SERVICES: ServiceCategory[] = [
   {
-    id: 'printing-paper', letter: 'A', title: 'Printing & Paper Products', subtitle: 'Business stationery and printed materials',
+    id: 'printing-paper', letter: 'A', title: 'Printing & Paper Products', subtitle: 'Business stationery and printed materials', imageLabel: 'Print & paper',
     description: 'Professional printed materials for business communication, promotions, publishing, and event presentation.', image: CATEGORY_IMAGES['printing-paper'],
     subitems: [
       {
@@ -77,7 +78,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'corporate-branding', letter: 'B', title: 'Corporate Branding & Business Cards', subtitle: 'Professional identity materials',
+    id: 'corporate-branding', letter: 'B', title: 'Corporate Branding & Business Cards', subtitle: 'Professional identity materials', imageLabel: 'Corporate identity',
     description: 'Corporate print essentials that present a polished, credible, and consistent business identity.', image: CATEGORY_IMAGES['corporate-branding'],
     subitems: [
       { id: 'standard-business-cards', name: 'Standard Business Cards', description: 'Classic business cards for everyday networking and professional introductions.' },
@@ -97,7 +98,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'logo-branding', letter: 'C', title: 'Logo Design & Brand Identity', subtitle: 'Creative identity services',
+    id: 'logo-branding', letter: 'C', title: 'Logo Design & Brand Identity', subtitle: 'Creative identity services', imageLabel: 'Logo & identity design',
     description: 'Professional brand direction and identity design that give businesses a sharper, more memorable presence.', image: CATEGORY_IMAGES['logo-branding'],
     subitems: [
       {
@@ -128,7 +129,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'promotional-products', letter: 'D', title: 'Promotional Products & Branded Merchandise', subtitle: 'Custom gifts and branded items',
+    id: 'promotional-products', letter: 'D', title: 'Promotional Products & Branded Merchandise', subtitle: 'Custom gifts and branded items', imageLabel: 'Branded mugs & gifts',
     description: 'Practical branded products that help businesses build visibility, recognition, and lasting customer touchpoints.', image: CATEGORY_IMAGES['promotional-products'],
     subitems: [
       {
@@ -154,7 +155,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'apparel-textile', letter: 'E', title: 'Apparel & Textile Branding', subtitle: 'Custom clothing and uniforms',
+    id: 'apparel-textile', letter: 'E', title: 'Apparel & Textile Branding', subtitle: 'Custom clothing and uniforms', imageLabel: 'Apparel branding',
     description: 'Custom garments and branded textile items for teams, organizations, events, and promotional visibility.', image: CATEGORY_IMAGES['apparel-textile'],
     subitems: [
       { id: 'custom-tshirt-printing', name: 'Custom T-Shirt Printing', description: 'Custom printed T-shirts for events, campaigns, teams, and organizational visibility.' },
@@ -171,7 +172,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'large-format', letter: 'F', title: 'Large-Format Printing & Signage', subtitle: 'Displays, banners, and signage',
+    id: 'large-format', letter: 'F', title: 'Large-Format Printing & Signage', subtitle: 'Displays, banners, and signage', imageLabel: 'Banners & displays',
     description: 'Large-format visuals designed to communicate clearly across retail, business, exhibition, and event environments.', image: CATEGORY_IMAGES['large-format'],
     subitems: [
       { id: 'banners', name: 'Banners', description: 'Printed banners for promotions, launches, retail messaging, and clear visual impact.' },
@@ -190,7 +191,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'stickers-packaging', letter: 'G', title: 'Stickers, Labels & Packaging', subtitle: 'Branding for products and retail packaging',
+    id: 'stickers-packaging', letter: 'G', title: 'Stickers, Labels & Packaging', subtitle: 'Branding for products and retail packaging', imageLabel: 'Labels & packaging',
     description: 'Practical branding solutions for retail, product presentation, event packaging, and business-ready packaging needs.', image: CATEGORY_IMAGES['stickers-packaging'],
     subitems: [
       { id: 'product-labels', name: 'Product Labels', description: 'Labels that help products communicate information, identity, and presentation.' },
@@ -208,7 +209,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'graphic-design', letter: 'H', title: 'Graphic Design & Marketing Materials', subtitle: 'Creative design services',
+    id: 'graphic-design', letter: 'H', title: 'Graphic Design & Marketing Materials', subtitle: 'Creative design services', imageLabel: 'Graphic design',
     description: 'Creative design support for brands, campaigns, businesses, and product communication across print and digital channels.', image: CATEGORY_IMAGES['graphic-design'],
     subitems: [
       { id: 'flyer-design', name: 'Flyer Design', description: 'Campaign flyer layouts created to communicate offers, events, or services clearly.' },
@@ -225,7 +226,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'event-branding', letter: 'I', title: 'Event & Corporate Branding', subtitle: 'Printed visual branding for events',
+    id: 'event-branding', letter: 'I', title: 'Event & Corporate Branding', subtitle: 'Printed visual branding for events', imageLabel: 'Event branding',
     description: 'Visual branding and printed collateral designed for corporate functions, exhibitions, and customer-facing event experiences.', image: CATEGORY_IMAGES['event-branding'],
     subitems: [
       { id: 'event-backdrops-branding', name: 'Event Backdrops', description: 'Backdrop graphics for event branding, objectives, and presentation environments.' },
@@ -241,7 +242,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'photo-decorative', letter: 'J', title: 'Photography & Decorative Printing', subtitle: 'Photo prints and wall art',
+    id: 'photo-decorative', letter: 'J', title: 'Photography & Decorative Printing', subtitle: 'Photo prints and wall art', imageLabel: 'Photo prints & wall art',
     description: 'Printed photography and decorative display pieces for homes, offices, gifting, and personal presentation.', image: CATEGORY_IMAGES['photo-decorative'],
     subitems: [
       { id: 'photo-printing', name: 'Photo Printing', description: 'Professional photo printing for personal images, brand moments, and keepsakes.' },
@@ -254,7 +255,7 @@ export const APPROVED_SERVICES: ServiceCategory[] = [
     ]
   },
   {
-    id: 'document-finishing', letter: 'K', title: 'Document & Finishing Services', subtitle: 'Document print and finishing support',
+    id: 'document-finishing', letter: 'K', title: 'Document & Finishing Services', subtitle: 'Document print and finishing support', imageLabel: 'Document finishing',
     description: 'Practical document and finishing support for business paperwork, presentations, and everyday professional records.', image: CATEGORY_IMAGES['document-finishing'],
     subitems: [
       { id: 'document-printing', name: 'Document Printing', description: 'Print services for reports, forms, files, and general office documentation.' },

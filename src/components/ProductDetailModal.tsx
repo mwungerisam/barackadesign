@@ -65,7 +65,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ category
       <section ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="product-detail-title" className="my-5 grid w-full max-w-3xl overflow-hidden border border-[#D0D0D0] bg-white text-[#111111] sm:grid-cols-2">
         <div className="relative min-h-56 bg-[#F2F2F2] sm:min-h-full">
           <img src={category.image} alt="" onError={(event) => { event.currentTarget.style.display = 'none'; }} className="absolute inset-0 h-full w-full object-cover" />
-          <span className="absolute bottom-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-[#333333]">Illustrative reference</span>
+          <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/75 via-black/25 to-transparent px-3 pb-3 pt-8">
+            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-white">{category.imageLabel}</span>
+            <span className="shrink-0 border border-white/40 bg-black/35 px-2 py-1 text-[9px] font-medium uppercase tracking-wide text-white">Reference image</span>
+          </span>
         </div>
         <div className="p-5 sm:p-7">
           <div className="flex items-start justify-between gap-4">

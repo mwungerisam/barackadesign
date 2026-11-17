@@ -121,7 +121,10 @@ export const ServiceCatalogue: React.FC<ServiceCatalogueProps> = ({
               >
                 <div className="relative h-40 overflow-hidden bg-[#F2F2F2]">
                   <img src={cat.image} alt="" loading="lazy" decoding="async" onError={(event) => { event.currentTarget.style.display = 'none'; }} className="h-full w-full object-cover" />
-                  <span className="absolute bottom-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-[#333333]">Illustrative reference</span>
+                  <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/75 via-black/25 to-transparent px-3 pb-3 pt-8">
+                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-white">{cat.imageLabel}</span>
+                    <span className="shrink-0 border border-white/40 bg-black/35 px-2 py-1 text-[9px] font-medium uppercase tracking-wide text-white">Reference image</span>
+                  </span>
                 </div>
                 <div className="p-5 sm:p-6">
                   <h3 className="text-xl font-semibold tracking-tight text-[#111111]">{cat.title}</h3>
