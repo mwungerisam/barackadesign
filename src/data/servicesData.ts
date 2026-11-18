@@ -7,15 +7,15 @@ import packagingImage from '../assets/images/stickers_packaging_1794043016239.we
 const CATEGORY_IMAGES = {
   'printing-paper': printProductionImage,
   'corporate-branding': brandIdentityImage,
-  'logo-branding': 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80',
-  'promotional-products': 'https://raw.githubusercontent.com/mwungerisam/barackadesign/292efd7ef7c0c58579c4b7c97debffeaa095ee08/src/assets/images/mugs_ceramic_matte_1793362635861.jpg',
+  'logo-branding': brandIdentityImage,
+  'promotional-products': printProductionImage,
   'apparel-textile': apparelImage,
   'large-format': largeFormatImage,
   'stickers-packaging': packagingImage,
-  'graphic-design': 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80',
-  'event-branding': 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
-  'photo-decorative': 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1200&q=80',
-  'document-finishing': 'https://raw.githubusercontent.com/mwungerisam/barackadesign/292efd7ef7c0c58579c4b7c97debffeaa095ee08/src/assets/images/case_architectural_monograph_1793361991774.jpg'
+  'graphic-design': brandIdentityImage,
+  'event-branding': largeFormatImage,
+  'photo-decorative': printProductionImage,
+  'document-finishing': printProductionImage
 } as const;
 
 export interface ServiceSubitem {
